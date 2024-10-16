@@ -22,6 +22,8 @@ public class GrpcServer1 {
         //3.创建服务对象
         Server server = serverBuilder.build();
         server.start();
+        System.out.println("服务已启动");
         server.awaitTermination();
+        System.out.println("服务结束");
     }
 }
