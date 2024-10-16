@@ -77,6 +77,37 @@ public final class UserServiceGrpc {
     return getGetUserInfoMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.ricardo.grpc.api.UserProto.LoginRequest1,
+      com.ricardo.grpc.api.UserProto.LoginResponse1> getLoginRequestMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "loginRequest",
+      requestType = com.ricardo.grpc.api.UserProto.LoginRequest1.class,
+      responseType = com.ricardo.grpc.api.UserProto.LoginResponse1.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.ricardo.grpc.api.UserProto.LoginRequest1,
+      com.ricardo.grpc.api.UserProto.LoginResponse1> getLoginRequestMethod() {
+    io.grpc.MethodDescriptor<com.ricardo.grpc.api.UserProto.LoginRequest1, com.ricardo.grpc.api.UserProto.LoginResponse1> getLoginRequestMethod;
+    if ((getLoginRequestMethod = UserServiceGrpc.getLoginRequestMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getLoginRequestMethod = UserServiceGrpc.getLoginRequestMethod) == null) {
+          UserServiceGrpc.getLoginRequestMethod = getLoginRequestMethod =
+              io.grpc.MethodDescriptor.<com.ricardo.grpc.api.UserProto.LoginRequest1, com.ricardo.grpc.api.UserProto.LoginResponse1>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "loginRequest"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.ricardo.grpc.api.UserProto.LoginRequest1.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.ricardo.grpc.api.UserProto.LoginResponse1.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("loginRequest"))
+              .build();
+        }
+      }
+    }
+    return getLoginRequestMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -138,6 +169,13 @@ public final class UserServiceGrpc {
         io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.UserInfo> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetUserInfoMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void loginRequest(com.ricardo.grpc.api.UserProto.LoginRequest1 request,
+        io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.LoginResponse1> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLoginRequestMethod(), responseObserver);
+    }
   }
 
   /**
@@ -182,6 +220,14 @@ public final class UserServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetUserInfoMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void loginRequest(com.ricardo.grpc.api.UserProto.LoginRequest1 request,
+        io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.LoginResponse1> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLoginRequestMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -212,6 +258,13 @@ public final class UserServiceGrpc {
     public com.ricardo.grpc.api.UserProto.UserInfo getUserInfo(com.ricardo.grpc.api.UserProto.OneOfMessage.UserId request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetUserInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.ricardo.grpc.api.UserProto.LoginResponse1 loginRequest(com.ricardo.grpc.api.UserProto.LoginRequest1 request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLoginRequestMethod(), getCallOptions(), request);
     }
   }
 
@@ -246,10 +299,19 @@ public final class UserServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetUserInfoMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.ricardo.grpc.api.UserProto.LoginResponse1> loginRequest(
+        com.ricardo.grpc.api.UserProto.LoginRequest1 request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLoginRequestMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LOGIN = 0;
   private static final int METHODID_GET_USER_INFO = 1;
+  private static final int METHODID_LOGIN_REQUEST = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -275,6 +337,10 @@ public final class UserServiceGrpc {
         case METHODID_GET_USER_INFO:
           serviceImpl.getUserInfo((com.ricardo.grpc.api.UserProto.OneOfMessage.UserId) request,
               (io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.UserInfo>) responseObserver);
+          break;
+        case METHODID_LOGIN_REQUEST:
+          serviceImpl.loginRequest((com.ricardo.grpc.api.UserProto.LoginRequest1) request,
+              (io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.LoginResponse1>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -308,6 +374,13 @@ public final class UserServiceGrpc {
               com.ricardo.grpc.api.UserProto.OneOfMessage.UserId,
               com.ricardo.grpc.api.UserProto.UserInfo>(
                 service, METHODID_GET_USER_INFO)))
+        .addMethod(
+          getLoginRequestMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.ricardo.grpc.api.UserProto.LoginRequest1,
+              com.ricardo.grpc.api.UserProto.LoginResponse1>(
+                service, METHODID_LOGIN_REQUEST)))
         .build();
   }
 
@@ -358,6 +431,7 @@ public final class UserServiceGrpc {
               .setSchemaDescriptor(new UserServiceFileDescriptorSupplier())
               .addMethod(getLoginMethod())
               .addMethod(getGetUserInfoMethod())
+              .addMethod(getLoginRequestMethod())
               .build();
         }
       }

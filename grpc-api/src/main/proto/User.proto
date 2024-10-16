@@ -29,8 +29,14 @@ message OneOfMessage{
   UserId userId = 3;
 }
 
-
+message LoginRequest1{
+  repeated string usernames = 1;
+}
+message LoginResponse1{
+  string result = 1;
+}
 service UserService{
   rpc login(LoginRequest) returns (LoginResponse);
   rpc getUserInfo(OneOfMessage.UserId) returns (UserInfo);
+  rpc loginRequest(LoginRequest1) returns (LoginResponse1);
 }

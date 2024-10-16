@@ -1,5 +1,6 @@
 package com.ricardo.rebecca.grpc.server.service;
 
+import com.google.protobuf.ProtocolStringList;
 import com.ricardo.grpc.api.UserProto;
 import com.ricardo.grpc.api.UserServiceGrpc;
 import io.grpc.stub.StreamObserver;
@@ -26,6 +27,21 @@ public class UserServiceImpl extends UserServiceGrpc.UserServiceImplBase{
         UserProto.LoginResponse response = builder.build();
         //4.返回响应
         responseObserver.onNext(response);
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void loginRequest(UserProto.LoginRequest1 request, StreamObserver<UserProto.LoginResponse1> responseObserver) {
+        ProtocolStringList usernamesList = request.getUsernamesList();
+        for (String username : usernamesList){
+            System.out.println("username"+username);
+        }
+        System.out.println("刚搞的服务，热乎的");
+
+        UserProto.LoginResponse1.Builder builder = UserProto.LoginResponse1.newBuilder();
+        builder.setResult("批量登录接口调用成功，登录人数"+usernamesList.size());
+        UserProto.LoginResponse1 loginResponse1 = builder.build();
+        responseObserver.onNext(loginResponse1);
         responseObserver.onCompleted();
     }
 }
