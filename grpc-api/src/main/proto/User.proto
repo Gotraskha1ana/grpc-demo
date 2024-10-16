@@ -1,0 +1,36 @@
+syntax = "proto3";
+option java_multiple_files = false;
+option java_package = "com.ricardo.grpc.api";
+option java_outer_classname = "UserProto";
+
+message UserInfo{
+  string username = 1;
+  string password = 2;
+  int32 age = 3;
+}
+
+message LoginRequest {
+  UserInfo request = 1;
+}
+
+message LoginResponse{
+  bool success = 1;
+  string message = 2;
+}
+
+message OneOfMessage{
+  message UserId{
+    int64 id = 1;
+  }
+  oneof data{
+    int64 id = 1;
+    string name = 2;
+  }
+  UserId userId = 3;
+}
+
+
+service UserService{
+  rpc login(LoginRequest) returns (LoginResponse);
+  rpc getUserInfo(OneOfMessage.UserId) returns (UserInfo);
+}
