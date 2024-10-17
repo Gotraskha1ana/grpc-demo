@@ -108,6 +108,99 @@ public final class UserServiceGrpc {
     return getLoginRequestMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.ricardo.grpc.api.UserProto.LoginRequest,
+      com.ricardo.grpc.api.UserProto.LoginResponse> getC2sMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "c2s",
+      requestType = com.ricardo.grpc.api.UserProto.LoginRequest.class,
+      responseType = com.ricardo.grpc.api.UserProto.LoginResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.ricardo.grpc.api.UserProto.LoginRequest,
+      com.ricardo.grpc.api.UserProto.LoginResponse> getC2sMethod() {
+    io.grpc.MethodDescriptor<com.ricardo.grpc.api.UserProto.LoginRequest, com.ricardo.grpc.api.UserProto.LoginResponse> getC2sMethod;
+    if ((getC2sMethod = UserServiceGrpc.getC2sMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getC2sMethod = UserServiceGrpc.getC2sMethod) == null) {
+          UserServiceGrpc.getC2sMethod = getC2sMethod =
+              io.grpc.MethodDescriptor.<com.ricardo.grpc.api.UserProto.LoginRequest, com.ricardo.grpc.api.UserProto.LoginResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "c2s"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.ricardo.grpc.api.UserProto.LoginRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.ricardo.grpc.api.UserProto.LoginResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("c2s"))
+              .build();
+        }
+      }
+    }
+    return getC2sMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.ricardo.grpc.api.UserProto.LoginRequest,
+      com.ricardo.grpc.api.UserProto.LoginResponse> getCs2sMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "cs2s",
+      requestType = com.ricardo.grpc.api.UserProto.LoginRequest.class,
+      responseType = com.ricardo.grpc.api.UserProto.LoginResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<com.ricardo.grpc.api.UserProto.LoginRequest,
+      com.ricardo.grpc.api.UserProto.LoginResponse> getCs2sMethod() {
+    io.grpc.MethodDescriptor<com.ricardo.grpc.api.UserProto.LoginRequest, com.ricardo.grpc.api.UserProto.LoginResponse> getCs2sMethod;
+    if ((getCs2sMethod = UserServiceGrpc.getCs2sMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getCs2sMethod = UserServiceGrpc.getCs2sMethod) == null) {
+          UserServiceGrpc.getCs2sMethod = getCs2sMethod =
+              io.grpc.MethodDescriptor.<com.ricardo.grpc.api.UserProto.LoginRequest, com.ricardo.grpc.api.UserProto.LoginResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "cs2s"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.ricardo.grpc.api.UserProto.LoginRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.ricardo.grpc.api.UserProto.LoginResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("cs2s"))
+              .build();
+        }
+      }
+    }
+    return getCs2sMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.ricardo.grpc.api.UserProto.LoginRequest,
+      com.ricardo.grpc.api.UserProto.LoginResponse> getCs2s2cMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "cs2s2c",
+      requestType = com.ricardo.grpc.api.UserProto.LoginRequest.class,
+      responseType = com.ricardo.grpc.api.UserProto.LoginResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<com.ricardo.grpc.api.UserProto.LoginRequest,
+      com.ricardo.grpc.api.UserProto.LoginResponse> getCs2s2cMethod() {
+    io.grpc.MethodDescriptor<com.ricardo.grpc.api.UserProto.LoginRequest, com.ricardo.grpc.api.UserProto.LoginResponse> getCs2s2cMethod;
+    if ((getCs2s2cMethod = UserServiceGrpc.getCs2s2cMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getCs2s2cMethod = UserServiceGrpc.getCs2s2cMethod) == null) {
+          UserServiceGrpc.getCs2s2cMethod = getCs2s2cMethod =
+              io.grpc.MethodDescriptor.<com.ricardo.grpc.api.UserProto.LoginRequest, com.ricardo.grpc.api.UserProto.LoginResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "cs2s2c"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.ricardo.grpc.api.UserProto.LoginRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.ricardo.grpc.api.UserProto.LoginResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("cs2s2c"))
+              .build();
+        }
+      }
+    }
+    return getCs2s2cMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -176,6 +269,27 @@ public final class UserServiceGrpc {
         io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.LoginResponse1> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLoginRequestMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void c2s(com.ricardo.grpc.api.UserProto.LoginRequest request,
+        io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.LoginResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getC2sMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.LoginRequest> cs2s(
+        io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.LoginResponse> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getCs2sMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.LoginRequest> cs2s2c(
+        io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.LoginResponse> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getCs2s2cMethod(), responseObserver);
+    }
   }
 
   /**
@@ -228,6 +342,30 @@ public final class UserServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getLoginRequestMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void c2s(com.ricardo.grpc.api.UserProto.LoginRequest request,
+        io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.LoginResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getC2sMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.LoginRequest> cs2s(
+        io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.LoginResponse> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
+          getChannel().newCall(getCs2sMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.LoginRequest> cs2s2c(
+        io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.LoginResponse> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getCs2s2cMethod(), getCallOptions()), responseObserver);
+    }
   }
 
   /**
@@ -265,6 +403,14 @@ public final class UserServiceGrpc {
     public com.ricardo.grpc.api.UserProto.LoginResponse1 loginRequest(com.ricardo.grpc.api.UserProto.LoginRequest1 request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getLoginRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<com.ricardo.grpc.api.UserProto.LoginResponse> c2s(
+        com.ricardo.grpc.api.UserProto.LoginRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getC2sMethod(), getCallOptions(), request);
     }
   }
 
@@ -312,6 +458,9 @@ public final class UserServiceGrpc {
   private static final int METHODID_LOGIN = 0;
   private static final int METHODID_GET_USER_INFO = 1;
   private static final int METHODID_LOGIN_REQUEST = 2;
+  private static final int METHODID_C2S = 3;
+  private static final int METHODID_CS2S = 4;
+  private static final int METHODID_CS2S2C = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -342,6 +491,10 @@ public final class UserServiceGrpc {
           serviceImpl.loginRequest((com.ricardo.grpc.api.UserProto.LoginRequest1) request,
               (io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.LoginResponse1>) responseObserver);
           break;
+        case METHODID_C2S:
+          serviceImpl.c2s((com.ricardo.grpc.api.UserProto.LoginRequest) request,
+              (io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.LoginResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -352,6 +505,12 @@ public final class UserServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_CS2S:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.cs2s(
+              (io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.LoginResponse>) responseObserver);
+        case METHODID_CS2S2C:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.cs2s2c(
+              (io.grpc.stub.StreamObserver<com.ricardo.grpc.api.UserProto.LoginResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -381,6 +540,27 @@ public final class UserServiceGrpc {
               com.ricardo.grpc.api.UserProto.LoginRequest1,
               com.ricardo.grpc.api.UserProto.LoginResponse1>(
                 service, METHODID_LOGIN_REQUEST)))
+        .addMethod(
+          getC2sMethod(),
+          io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+            new MethodHandlers<
+              com.ricardo.grpc.api.UserProto.LoginRequest,
+              com.ricardo.grpc.api.UserProto.LoginResponse>(
+                service, METHODID_C2S)))
+        .addMethod(
+          getCs2sMethod(),
+          io.grpc.stub.ServerCalls.asyncClientStreamingCall(
+            new MethodHandlers<
+              com.ricardo.grpc.api.UserProto.LoginRequest,
+              com.ricardo.grpc.api.UserProto.LoginResponse>(
+                service, METHODID_CS2S)))
+        .addMethod(
+          getCs2s2cMethod(),
+          io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+            new MethodHandlers<
+              com.ricardo.grpc.api.UserProto.LoginRequest,
+              com.ricardo.grpc.api.UserProto.LoginResponse>(
+                service, METHODID_CS2S2C)))
         .build();
   }
 
@@ -432,6 +612,9 @@ public final class UserServiceGrpc {
               .addMethod(getLoginMethod())
               .addMethod(getGetUserInfoMethod())
               .addMethod(getLoginRequestMethod())
+              .addMethod(getC2sMethod())
+              .addMethod(getCs2sMethod())
+              .addMethod(getCs2s2cMethod())
               .build();
         }
       }

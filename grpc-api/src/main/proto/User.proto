@@ -39,4 +39,7 @@ service UserService{
   rpc login(LoginRequest) returns (LoginResponse);
   rpc getUserInfo(OneOfMessage.UserId) returns (UserInfo);
   rpc loginRequest(LoginRequest1) returns (LoginResponse1);
+  rpc c2s(LoginRequest) returns (stream LoginResponse);
+  rpc cs2s(stream LoginRequest) returns (LoginResponse);
+  rpc cs2s2c(stream LoginRequest) returns (stream LoginResponse);
 }

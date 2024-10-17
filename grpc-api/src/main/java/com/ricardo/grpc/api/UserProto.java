@@ -4705,12 +4705,15 @@ public final class UserProto {
       "\n\004name\030\002 \001(\tH\000\022$\n\006userId\030\003 \001(\0132\024.OneOfMe" +
       "ssage.UserId\032\024\n\006UserId\022\n\n\002id\030\001 \001(\003B\006\n\004da" +
       "ta\"\"\n\rLoginRequest1\022\021\n\tusernames\030\001 \003(\t\" " +
-      "\n\016LoginResponse1\022\016\n\006result\030\001 \001(\t2\226\001\n\013Use" +
+      "\n\016LoginResponse1\022\016\n\006result\030\001 \001(\t2\224\002\n\013Use" +
       "rService\022&\n\005login\022\r.LoginRequest\032\016.Login" +
       "Response\022.\n\013getUserInfo\022\024.OneOfMessage.U" +
       "serId\032\t.UserInfo\022/\n\014loginRequest\022\016.Login" +
-      "Request1\032\017.LoginResponse1B#\n\024com.ricardo" +
-      ".grpc.apiB\tUserProtoP\000b\006proto3"
+      "Request1\032\017.LoginResponse1\022&\n\003c2s\022\r.Login" +
+      "Request\032\016.LoginResponse0\001\022\'\n\004cs2s\022\r.Logi" +
+      "nRequest\032\016.LoginResponse(\001\022+\n\006cs2s2c\022\r.L" +
+      "oginRequest\032\016.LoginResponse(\0010\001B#\n\024com.r" +
+      "icardo.grpc.apiB\tUserProtoP\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
